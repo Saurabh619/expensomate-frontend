@@ -1,0 +1,34 @@
+<div class="uk-margin-medium-top topbar" uk-sticky="offset: 50">
+  <ul class="uk-wizard uk-wizard-hover uk-grid uk-grid-collapse uk-grid-width-medium-1-2 uk-grid-width-large-1-4">
+    <li class="uk-step cursor-pointer" ng-class="{'uk-active': state.current.name == 'expense'}" ui-sref="expense({group: state.params.group, groupId: state.params.groupId, memberId: state.params.memberId})">
+      <div class="uk-step-content">
+        <div class="uk-wizard-icon"><i class="uk-icon-database"></i></div>
+        <div class="uk-wizard-title wizrd">Expense</div>
+      </div>
+    </li>
+    <li class="uk-step cursor-pointer" ng-class="{'uk-active': state.current.name == 'member'}" ui-sref="member({group: state.params.group, groupId: state.params.groupId, memberId: state.params.memberId})">
+      <div class="uk-step-content">
+        <div class="uk-wizard-icon"><i class="uk-icon-support"></i></div>
+        <div class="uk-wizard-title wizrd">Member</div>
+      </div>
+    </li>
+    <li class="uk-step cursor-pointer" ng-class="{'uk-active': state.current.name == 'group'}" ui-sref="group({group: state.params.group, groupId: state.params.groupId, memberId: state.params.memberId})">
+      <div class="uk-step-content">
+        <div class="uk-wizard-icon"><i class="uk-icon-support"></i></div>
+        <div class="uk-wizard-title wizrd">Group</div>
+      </div>
+    </li>
+    <li class="uk-step cursor-pointer" ng-class="{'uk-active': state.current.name == 'upload'}" ui-sref="upload({group: state.params.group, groupId: state.params.groupId, memberId: state.params.memberId})">
+      <div class="uk-step-content">
+        <div class="uk-wizard-icon"><i class="uk-icon-user"></i></div>
+        <div class="uk-wizard-title wizrd">Upload</div>
+      </div>
+    </li>
+    <li class="uk-step cursor-pointer" ng-class="{'uk-active': state.current.name == 'summary'}" ui-sref="summary({group: state.params.group, groupId: state.params.groupId, memberId: state.params.memberId})">
+      <div class="uk-step-content">
+        <div class="uk-wizard-icon"><i class="uk-icon-user"></i></div>
+        <div class="uk-wizard-title wizrd">Summary</div>
+      </div>
+    </li>
+  </ul>
+</div>

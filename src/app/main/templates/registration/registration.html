@@ -1,0 +1,17 @@
+<header></header>
+<div class="uk-container uk-container-small uk-margin-top">
+  <div ng-init="showSignUp = true;">
+    <div class="uk-margin-medium-top">
+      <ul class="uk-flex-center" uk-tab>
+        <li class="uk-active"><a href="#" ng-click="showSignUp = true;showSignIn = false;">Sign up</a></li>
+        <li><a href="#" ng-click="showSignIn = true;showSignUp = false;">Sign in</a></li>
+      </ul>
+    </div>
+    <div class="uk-child-width-expand@s uk-text-center" ng-show="showSignUp" uk-grid>
+      <div ui-view="signup"></div>
+    </div>
+    <div class="uk-child-width-expand@s uk-text-center" ng-show="showSignIn" uk-grid>
+      <div ui-view="signin"></div>
+    </div>
+  </div>
+</div>

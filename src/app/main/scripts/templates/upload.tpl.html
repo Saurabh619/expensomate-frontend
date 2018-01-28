@@ -1,0 +1,18 @@
+<div class="test-upload uk-placeholder uk-text-center" style="padding: 8px 74px;">
+  <div class="uk-cover-background" ng-hide="load" ng-if="data.member.imageurl && data.member.imageurl.indexOf('pdf') == -1">
+    <img ng-src="{{data.member.imageurl}}" max-width="50%;" height="" alt="" ng-if="data.member.imageurl.indexOf('pdf') == -1" />
+  </div>
+  <div class="uk-cover-background" ng-hide="load" ng-if="data.member.imageurl && data.member.imageurl.indexOf('pdf') != -1">
+    <object data="{{data.member.imageurl}}" type="application/pdf" width="400" height="400">
+      </object>
+  </div>
+  <div uk-form-custom ng-show="changefile">
+    <span ngf-select="uploadFile($file)" class="uk-link"><br>Change Document&nbsp;&nbsp;</span>
+    <span uk-icon="icon: cloud-upload"></span>
+  </div>
+  <div class="uk-align-center blue-loader" ng-show="load" uk-spinner></div>
+  <span ng-show="load" class="uk-text-middle">&nbsp;Uploading File ...</span>
+  <div ng-hide="!showfile || load" uk-form-custom>
+    <span ngf-select="uploadFile($file)" ngf-max-size="20MB" ngf-drop="" class="uk-link">&nbsp;Upload</span>
+  </div>
+</div>

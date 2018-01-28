@@ -1,0 +1,59 @@
+<div class="uk-grid-divider uk-child-width-expand@s margt60" uk-grid>
+    <div>
+      <form class="uk-form-horizontal uk-margin-large" name="add" ng-submit="funcs.addExpense()">
+          <div class="uk-margin">
+              <label class="uk-form-label" for="form-horizontal-text"> Add Expense*</label>
+              <div class="uk-form-controls">
+                <div class="uk-inline">
+                  <span class="uk-form-icon" uk-icon="icon: hashtag"></span>
+                  <input class="uk-input" type="text" placeholder="Amount" ng-model="member.amount" required>
+                </div>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <label class="uk-form-label" for="form-horizontal-text"> Add Reason (Optional)</label>
+              <div class="uk-form-controls">
+                <div class="uk-inline">
+                  <span class="uk-form-icon" uk-icon="icon: commenting"></span>
+                  <input class="uk-input" type="text" placeholder="Reason" ng-model="member.reason" required>
+                </div>
+              </div>
+          </div>
+          <div class="uk-margin">
+            <div class="uk-form-row">
+              <button class="uk-width-1-2 uk-button uk-button-primary tm-button-primary" type="submit">
+                <span ng-hide="load.submit">Add</span>
+                <span uk-spinner ng-show="load.submit"></span>
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div>
+      <form class="uk-form-horizontal uk-margin-large" name="split" ng-submit="funcs.splitWithMember()">
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text"> Split wiit</label>
+        <div class="uk-form-controls">
+          <div class="uk-inline">
+            <select class="uk-select width146" ng-model="member.splitWith">
+              <option  ng-if="members" ng-repeat="data in members" ng-bind="data.name" ng-value="member.name"></option>
+              <option ng-if="!members" ng-value="'NA'"></option>
+            </select>
+         </div>
+       </div>
+     </div>
+     <div class="uk-margin">
+       <label class="uk-form-label" for="form-horizontal-text"> Split as <span ng-bind="member.splitAs + '0%'"></span></label>
+       <input class="uk-range" ng-model="member.splitAs" type="range" value="2" min="0" max="10" step="1">
+     </div>
+     <div class="uk-margin">
+      <div class="uk-form-row">
+        <button class="uk-width-1-2 uk-button uk-button-primary tm-button-primary margt10" type="submit">
+          <span ng-hide="load.submit">Split</span>
+          <span uk-spinner ng-show="load.submit"></span>
+        </button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

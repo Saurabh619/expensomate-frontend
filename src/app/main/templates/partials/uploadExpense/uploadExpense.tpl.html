@@ -1,0 +1,52 @@
+<form class="uk-form-horizontal uk-margin-large" name="signup" ng-submit="funcs.addExpense()">
+
+  <div class="uk-margin">
+    <label class="uk-form-label" for="form-horizontal-text"> Upload Recipt</label>
+    <div class="uk-form-controls">
+      <div class="uk-inline">
+        <upload-file></upload-file>
+      </div>
+    </div>
+  </div>
+
+  <div class="uk-margin margb50">
+    <div class="uk-form-row">
+      <button class="uk-width-1-3 uk-button uk-button-primary tm-button-primary" type="submit">
+        <span ng-hide="load.submit">Extract</span>
+        <span uk-spinner ng-show="load.submit"></span>
+      </button>
+    </div>
+    <hr>
+  </div>
+
+
+  <div class="uk-margin">
+      <label class="uk-form-label" for="form-horizontal-text"> Confirm Expense*</label>
+      <div class="uk-form-controls">
+        <div class="uk-inline">
+          <span class="uk-form-icon" uk-icon="icon: hashtag"></span>
+          <input class="uk-input" type="text" placeholder="Amount" ng-model="input.amount" required>
+        </div>
+      </div>
+  </div>
+
+  <div class="uk-margin">
+      <label class="uk-form-label" for="form-horizontal-text"> Confirm Reason (Optional)</label>
+      <div class="uk-form-controls">
+        <div class="uk-inline">
+          <span class="uk-form-icon" uk-icon="icon: commenting"></span>
+          <input class="uk-input" type="text" placeholder="Reason" ng-model="input.reason" required>
+        </div>
+      </div>
+  </div>
+
+  <div class="uk-margin">
+    <div class="uk-form-row">
+      <button class="uk-width-1-3 uk-button uk-button-primary tm-button-primary" type="submit">
+        <span ng-hide="load.submit">Submit</span>
+        <span uk-spinner ng-show="load.submit"></span>
+      </button>
+    </div>
+  </div>
+
+</form>

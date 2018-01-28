@@ -1,0 +1,42 @@
+<form class="uk-form-horizontal uk-margin-large" name="invite" ng-submit="funcs.inviteMember()">
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text"> Member Name* </label>
+        <div class="uk-form-controls">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input class="uk-input" type="text" placeholder="Member Name" ng-model="member.name" required>
+          </div>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text"> Member Email* </label>
+        <div class="uk-form-controls">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input class="uk-input" type="text" placeholder="Member Email" ng-model="member.email" required>
+          </div>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text"> Member Phone* </label>
+        <div class="uk-form-controls">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: phone"></span>
+            <input class="uk-input" type="text" placeholder="Member Phone" ng-model="member.phone" required>
+          </div>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+      <div class="uk-form-row align-center">
+        <button class="uk-width-1-2 uk-button uk-button-primary tm-button-primary" type="submit">
+          <span ng-hide="load.invite">Invite</span>
+          <span uk-spinner ng-show="load.invite"></span>
+        </button>
+      </div>
+    </div>
+
+</form>

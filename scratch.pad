@@ -1,0 +1,28 @@
+-- Local development server testing (Install Nodejs, MongoDB)
+
+sudo apt-get update && sudo apt-get install npm bower && npm i && bower i && gulp serve
+
+-- command to actively push code with tags
+
+gulp build && git add . && git commit -m "updated build" && git push origin master && git tag -a "v0.0.1" -m "staging build" && git push origin --tags
+
+-- local nginx configuration
+
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name expensomate.devstag;
+
+  location / {
+      proxy_pass http://0.0.0.0:3000/;
+      index index.html index.htm;
+  }
+
+
+  location /api {
+      proxy_pass http://api.prv:51880/api;
+   }
+}
+
+-- add api.prv and expensomate.devstag to /etc/hosts 127.0.0.1

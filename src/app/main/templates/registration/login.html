@@ -1,0 +1,43 @@
+<header></header>
+<div class="uk-container uk-container-small uk-margin-top">
+  <div>
+    <div class="uk-margin-medium-top">
+      <ul class="uk-flex-center" uk-tab>
+        <li class="uk-active"><a href="#">Sign In</a></li>
+      </ul>
+    </div>
+    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+      <form name="signin" ng-submit="funcs.signin()">
+        <dd class="uk-text-meta uk-text-info" style="margin-top: 8px;" ng-show="state.current.name == 'login'">Use the credentials sent to your email and phone to login</dd>
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input class="uk-input" type="text" placeholder="Username" ng-model="input.username" required>
+          </div>
+        </div>
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input class="uk-input" type="password" placeholder="Password" ng-model="input.password" required>
+          </div>
+        </div>
+        <div class="uk-margin">
+          <div class="uk-form-row">
+            <button ng-show="state.current.name == 'login'" class="uk-width-1-3 uk-button uk-button-primary tm-button-primary" type="submit">
+              <span ng-hide="load.signin">Sign In</span>
+              <span uk-spinner ng-show="load.signin"></span>
+            </button>
+          </div>
+          <div class="align-center">
+            <dd class="uk-text-meta uk-text-danger" style="margin-top: 8px;" ng-show="show.loginErrorMessage">! Login failed, try again.</dd>
+            <br>
+            <span ng-show="state.current.name == 'login'">
+              or
+              <a ui-sref="registration({groupId: params.groupId, group: params.group})">Sign up</a>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

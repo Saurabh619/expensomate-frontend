@@ -1,0 +1,34 @@
+<form class="uk-form-horizontal uk-margin-large" name="invite" ng-submit="funcs.inviteMember()">
+
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-horizontal-text"> Group Name </label>
+        <div class="uk-form-controls">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: hashtag"></span>
+            <input class="uk-input" type="text" placeholder="Group Name" ng-model="group" disabled>
+          </div>
+        </div>
+    </div>
+
+    <table class="uk-table uk-table-justify uk-table-divider uk-table-striped">
+      <thead>
+            <tr>
+              <th class="uk-width-small">Member Name</th>
+              <th class="uk-width-small">Member Email</th>
+              <th class="uk-width-small">Member Phone</th>
+              <th class="uk-width-small">Joined</th>
+            </tr>
+        </thead>
+        <tbody class="font08">
+            <tr ng-repeat="data in members">
+              <td ng-bind="data.name"></td>
+              <td ng-bind="data.email"></td>
+                <td ng-bind="data.phone"></td>
+                <td ng-bind="pendingTime(data.id) + ' ago'"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</form>
