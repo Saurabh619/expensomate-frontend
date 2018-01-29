@@ -1,7 +1,7 @@
 angular.module('expensify').controller('MainController', MainController);
 
 /** @ngInject */
-function MainController($state, $scope, $cookies, DataFactory, GatewayService, $timeout, $http, UtilsService, $interval, $q, $log, $document, $window) {
+function MainController($state, $scope, $cookies, DataFactory, GatewayService, $timeout, $http, $interval, $q, $log, $document, $window) {
 
     $scope.member = {};
     $scope.saving = false;
